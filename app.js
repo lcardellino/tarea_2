@@ -1,25 +1,21 @@
-const express = require("express");
-const app = express();
-const logger = require("morgan");
+const express = require('express')
+const app = express()
+const logger = require("morgan")
+const cors = require("cors")
+const {conect} = require("./db/db")
 
-app.use(logger("dev"));
-app.use(express.json());
+const indexRouter = require("./routes/index");
+const productoRouter = require("./routes/producto")
 
-const indexRouter = require("./routers/index");
+
+app.use(logger("dev"))
+app.use(express.json())
+app.use(cors())
+
 app.use("/", indexRouter);
+app.use("/drogueria", productoRouter);
 
-const userRouter = require("./routers/users");
-app.use("/users", userRouter);
-
-const mathRouter = require("./routers/math");
-app.use("/math", mathRouter);
-
-const listRouter = require("./routers/list");
-app.use("/list", listRouter);
-
-const logRouter = require("./routers/log");
-app.use("/log", logRouter);
-
+conect();
 
 module.exports = app;
 

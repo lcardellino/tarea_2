@@ -1,7 +1,7 @@
 {
-  "name": "tarea2",
+  "name": "tarea4",
   "version": "1.0.0",
-  "description": "tarea 2 backend Numen",
+  "description": "tarea 4 backend Numen",
   "main": "index.js",
   "scripts": {
     "dev": "node server.js"
@@ -9,7 +9,11 @@
   "author": "Lucas Cardellino",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "mongoose": "^6.7.2",
     "morgan": "^1.10.0"
   }
 }
